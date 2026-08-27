@@ -594,13 +594,58 @@
         let timerInterval = null;
         let secondsElapsed = 0;
 
-        const WORD_DICTIONARY = {
-            3: ["CAT", "DOG", "SUN", "PIN", "MAP", "PEN", "FLY", "RUN", "BAT", "CUP", "FOX", "GEM", "HAT", "ICE", "KEY"],
-            4: ["KING", "MIND", "PLAY", "COLD", "LION", "DUCK", "FISH", "GLOW", "JUMP", "MILK", "NEST", "PINK", "RUST", "WAVE", "ZEAL"],
-            5: ["PLANT", "BRICK", "CHAIR", "DREAM", "FLAME", "GIANT", "HOUSE", "LIGHT", "MUSIC", "NIGHT", "POWER", "SHARK", "TRAIN", "WATER", "YOUTH"],
-            6: ["FLOWER", "PLANET", "SILVER", "SPRING", "SUMMER", "WINTER", "CASTLE", "DRAGON", "FOREST", "GOLDEN", "ISLAND", "JUNGLE", "MONKEY", "ORANGE", "YELLOW"],
-            7: ["JOURNEY", "MONSTER", "DIAMOND", "FREEDOM", "GLORY", "HARBOR", "KINGDOM", "LANTERN", "MYSTERY", "PICTURE", "SILENCE", "THUNDER", "VICTORY", "WEATHER", "WISDOM"]
-        };
+       const WORD_DICTIONARY = {
+    3: [
+        "ACT", "AGE", "AIR", "ANT", "ART", "BAG", "BAT", "BOX", "BOY", "BUG", 
+        "BUS", "CAR", "CAT", "COW", "CRY", "CUP", "DAY", "DOG", "DRY", "EAR", 
+        "EGO", "END", "EYE", "FAN", "FAT", "FIT", "FLY", "FOX", "FUN", "GAP", 
+        "GEM", "GOD", "GUM", "HAT", "HOT", "HOW", "ICE", "INK", "JAM", "JOB", 
+        "JOY", "KEY", "KID", "KIT", "LAW", "LEG", "LIP", "LOG", "MAN", "MAP", 
+        "NET", "NEW", "NUT", "OWL", "PAN", "PEN", "PIG", "PIN", "RAT", "RED", 
+        "RUN", "SAD", "SKY", "SUN", "TAX", "TOY", "VAN", "WEB", "ZIP"
+    ],
+    4: [
+        "ATOM", "BIRD", "BLUE", "BOAT", "BOWL", "CAMP", "CITY", "COLD", "CROP", "DARK", 
+        "DESK", "DRAW", "DROP", "DUCK", "FACT", "FAST", "FISH", "FLAG", "FORM", "FROG", 
+        "GIFT", "GIRL", "GLOW", "GOLD", "GULF", "HALF", "HAND", "HARD", "HOPE", "HOST", 
+        "IRON", "JOIN", "JOKE", "JUMP", "KIND", "KING", "KITE", "LACK", "LAND", "LION", 
+        "LOUD", "MICE", "MILK", "MIND", "MUST", "NEST", "NOTE", "OVEN", "PATH", "PINK", 
+        "PLAY", "POEM", "PRAY", "QUIT", "RICH", "ROCK", "RUST", "SAND", "SKIN", "SOAP", 
+        "SONG", "TANK", "TOWN", "TUBE", "VIEW", "WAVE", "WIND", "WOLF", "YARD", "ZERO"
+    ],
+    5: [
+        "ABOUT", "ACTOR", "ANGRY", "BEACH", "BLACK", "BLIND", "BOARD", "BRICK", "BROWN", "CHAIR", 
+        "CHEST", "CLEAN", "CLIMB", "COURT", "CRAFT", "CRAZY", "DANCE", "DREAM", "DRIVE", "EARTH", 
+        "EMPTY", "FAULT", "FIELD", "FLAME", "FOCUS", "FRAME", "FRANK", "FROST", "GHOST", "GIANT", 
+        "GLORY", "GRAPE", "HEART", "HEAVY", "HOUSE", "JUICE", "KNIFE", "LEMON", "LIGHT", "MAGIC", 
+        "MARCH", "MATCH", "METAL", "MODEL", "MOUSE", "MUSIC", "NIGHT", "NOISE", "OCEAN", "PAINT", 
+        "PANEL", "PLANT", "POUND", "POWER", "PRICE", "PROUD", "QUICK", "RIGHT", "SHARK", "SHIRT", 
+        "SMILE", "SOUND", "SPACE", "SPORT", "STORE", "STORY", "TABLE", "THINK", "TRAIN", "TRUTH", 
+        "VOICE", "WATER", "WHITE", "WOMAN", "WORLD", "YOUTH"
+    ],
+    6: [
+        "ACTION", "ALMOST", "ANIMAL", "AUTHOR", "BASKET", "BEAUTY", "BEYOND", "BRANCH", "BREATH", "BROKEN", 
+        "BUDGET", "CASTLE", "CLIENT", "CLOSET", "CREDIT", "CUSTOM", "DANGER", "DESIGN", "DRAGON", "FAMILY", 
+        "FLIGHT", "FLOWER", "FOREST", "FORGIVE", "FORMAT", "FRIEND", "GARDEN", "GOLDEN", "GROWTH", "HONEST", 
+        "HUNTER", "IMPACT", "INJURY", "ISLAND", "JACKET", "JUNGLE", "LAWYER", "LENGTH", "MARKET", "MATRIX", 
+        "METHOD", "MONKEY", "MOTHER", "NATURE", "OBJECT", "PASTEL", "PENCIL", "PLANET", "PLAYER", "POCKET", 
+        "POLICY", "PUBLIC", "PUNISH", "RANDOM", "RESCUE", "ROCKET", "SEARCH", "SIGNAL", "SILVER", "SIMPLE", 
+        "SINGLE", "SPRING", "STREAM", "STUDIO", "TARGET", "THINGS", "TRAVEL", "VICTOR", "VISUAL", "VOYAGE", 
+        "WEALTH", "WEIGHT", "WINTER", "WONDER", "WORKER"
+    ],
+    7: [
+        "ABSOLUT", "ALGEBRA", "AMNESTY", "ANXIETY", "ARCHIVE", "AUCTION", "BACKLOG", "BALCONY", "BANKRUPT", "BINGHAM", 
+        "BLANKET", "CABINET", "CALIBER", "CAMPING", "CAPITOL", "CAREFUL", "CHARIOT", "CLARITY", "CLIMATE", "COMPLEX", 
+        "CONSUME", "CORNFLK", "COURAGE", "CRUELTY", "CUSHION", "DEFROST", "DESTINY", "DOLPHIN", "DYNAMIT", "ELASTIC", 
+        "EMBARGO", "EXPLAIN", "FACTORY", "FLIPPER", "FORGIVE", "FRACTION", "FUNERAL", "GLACIER", "GRAVITY", "HANDFUL", 
+        "HARMONY", "HOSTAGE", "HUSBAND", "IMPLANT", "JOURNEY", "JUSTICE", "KEYHOLE", "KINGDOM", "LOCKJAW", "LOGICAL", 
+        "MACHINE", "MAGNETO", "MAJESTY", "MASTERQ", "MIRACLE", "MONSTER", "MUSICAL", "NOVELTY", "OSTRICH", "OUTBACK", 
+        "PANTHER", "PELICAN", "PHANTOM", "PICTURE", "PLASTIC", "POVERTY", "PROBLEM", "PRODUCT", "PROJECT", "QUALITY", 
+        "QUICKLY", "RAVIOLI", "REPLYING", "ROUTINE", "SARDINE", "SECTION", "SMOKING", "SPANISH", "STOMACH", "SUBJECT", 
+        "SURFACE", "THUNDER", "TOYSHOP", "TROUBLE", "UNIVERSE", "VAMPIRE", "VEHICLA", "VICTORY", "VINTAGE", "VOLCANO", 
+        "WAKEUP", "WORKING", "YOGURTS", "ZEALOUS", "ZOMBIES"
+    ]
+};
 
         const AudioCtx = window.AudioContext || window.webkitAudioContext;
         let audioCtx;
