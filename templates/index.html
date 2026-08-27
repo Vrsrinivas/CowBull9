@@ -1,68 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-T00BDGJLS7"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-T00BDGJLS7');
-</script>
-    
-     <meta charset="UTF-8">
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-M3L64T73');</script>
+    <!-- End Google Tag Manager -->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cow-Bull Game - Srinivas Varanasi</title>
     <style>
         /* Smooth input & button transitions */
-input[type="text"] { transition: border-color 0.2s; }
-button { transition: opacity 0.2s; }
-.error { min-height: 20px; }
-.message { min-height: 24px; }
+        input[type="text"] { transition: border-color 0.2s; }
+        button { transition: opacity 0.2s; }
+        .error { min-height: 15px; margin-top: 2px; margin-bottom: 2px; }
+        .message { min-height: 20px; margin-top: 4px; margin-bottom: 4px; }
 
-/* Guess Row Pop Animation */
-@keyframes popIn {
-    0% { transform: scale(0.8); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
-}
-.guess-row { animation: popIn 0.3s ease-in-out; }
+        /* Guess Row Pop Animation */
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .guess-row { animation: popIn 0.3s ease-in-out; }
 
-/* Virtual Keyboard Styles */
-.keyboard-container {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    align-items: center;
-}
-.keyboard-row {
-    display: flex;
-    gap: 4px;
-}
-.key-btn {
-    background-color: #e2e8f0;
-    color: #1e293b;
-    border: none;
-    padding: 10px 12px;
-    font-size: 13px;
-    font-weight: 700;
-    border-radius: 6px;
-    cursor: pointer;
-    min-width: 32px;
-    transition: background 0.2s, color 0.2s;
-}
-.key-btn:hover { background-color: #cbd5e1; }
-.key-bull { background-color: #10b981 !important; color: white !important; }
-.key-cow { background-color: #eab308 !important; color: white !important; }
-.key-miss { background-color: #64748b !important; color: white !important; }
+        /* Virtual Keyboard Styles */
+        .keyboard-container {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            align-items: center;
+        }
+        .keyboard-row {
+            display: flex;
+            gap: 4px;
+        }
+        .key-btn {
+            background-color: #e2e8f0;
+            color: #1e293b;
+            border: none;
+            padding: 10px 12px;
+            font-size: 13px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            min-width: 32px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .key-btn:hover { background-color: #cbd5e1; }
+        .key-bull { background-color: #10b981 !important; color: white !important; }
+        .key-cow { background-color: #eab308 !important; color: white !important; }
+        .key-miss { background-color: #64748b !important; color: white !important; }
 
         body { 
-            <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M3L64T73"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
             max-width: 960px; 
             margin: 20px auto; 
@@ -89,9 +81,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         .subtitle {
             text-align: center;
             margin-top: 0;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             color: #4f46e5;
-            font-weight: 600;
         }
 
         /* Streak & Stats Bar */
@@ -103,7 +94,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             background: #f1f5f9;
             padding: 8px 16px;
             border-radius: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-size: 14px;
             font-weight: 700;
             color: #334155;
@@ -234,14 +225,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             border-color: #cbd5e1;
         }
         .alpha-btn.state-green {
-            background-color: #10b981;
-            color: #ffffff;
-            border-color: #059669;
+            background-color: #10b981 !important;
+            color: #ffffff !important;
+            border-color: #059669 !important;
         }
         .alpha-btn.state-orange {
-            background-color: #f97316;
-            color: #ffffff;
-            border-color: #ea580c;
+            background-color: #eab308 !important;
+            color: #ffffff !important;
+            border-color: #ca8a04 !important;
         }
 
         .game-panel {
@@ -253,7 +244,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
 
         .settings { 
-            margin-bottom: 10px; 
+            margin-bottom: 8px; 
             font-size: 14px; 
             color: #1e293b; 
             display: flex; 
@@ -263,62 +254,51 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             flex-wrap: wrap; 
         }
         select { font-size: 14px; padding: 6px 10px; border-radius: 6px; border: 1px solid #cbd5e1; background: white; }
-        .easy-mode-toggle {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            background: #f1f5f9;
-            padding: 6px 10px;
-            border-radius: 6px;
-            border: 1px solid #cbd5e1;
-            user-select: none;
-        }
-        .easy-mode-toggle input { cursor: pointer; accent-color: #10b981; }
 
-        input[type="text"] { font-size: 18px; padding: 10px; width: 55%; text-transform: uppercase; text-align: center; letter-spacing: 4px; border: 2px solid #cbd5e1; border-radius: 6px; }
+        input[type="text"] { font-size: 18px; padding: 8px 10px; width: 55%; text-transform: uppercase; text-align: center; letter-spacing: 4px; border: 2px solid #cbd5e1; border-radius: 6px; }
         input[type="text"]:focus { outline: none; border-color: #4f46e5; }
         
-        button { font-size: 15px; padding: 9px 14px; cursor: pointer; background-color: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; }
+        button { font-size: 15px; padding: 8px 14px; cursor: pointer; background-color: #10b981; color: white; border: none; border-radius: 6px; font-weight: 600; }
         button:hover { opacity: 0.95; }
         .btn-start { background-color: #4f46e5; }
-        .btn-reset { background-color: #64748b; margin-top: 15px; }
+        .btn-reset { background-color: #64748b; margin-top: 10px; }
+        .btn-giveup { background-color: #f59e0b; margin-left: 6px; }
+        .btn-giveup:hover { background-color: #d97706; }
 
         .timer-ticker {
-            margin: 5px auto 10px auto;
+            margin: 2px auto 6px auto;
             background: #1e293b;
             color: #38bdf8;
-            padding: 6px 16px;
+            padding: 4px 12px;
             border-radius: 20px;
             font-family: monospace;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: bold;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 6px;
             box-shadow: inset 0 2px 4px rgba(0,0,0,0.3);
             width: fit-content;
         }
 
         .clue-meter-box {
-            margin: 10px 0;
+            margin: 4px 0 8px 0;
             background: #f1f5f9;
-            padding: 8px 12px;
+            padding: 6px 10px;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
         }
         .meter-bar-outer {
             flex: 1;
-            height: 10px;
+            height: 8px;
             background: #e2e8f0;
-            border-radius: 5px;
-            margin: 0 10px;
+            border-radius: 4px;
+            margin: 0 8px;
             overflow: hidden;
         }
         .meter-bar-inner {
@@ -331,12 +311,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         .attempts-dots {
             display: flex;
             justify-content: center;
-            gap: 5px;
-            margin: 10px 0;
+            gap: 4px;
+            margin: 4px 0;
         }
         .dot {
-            width: 12px;
-            height: 12px;
+            width: 10px;
+            height: 10px;
             border-radius: 50%;
             background-color: #10b981;
             transition: all 0.3s ease;
@@ -407,35 +387,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         .analytics-card .val { font-size: 18px; font-weight: 700; color: #4f46e5; }
         .analytics-card .lbl { font-size: 11px; color: #64748b; font-weight: 600; text-transform: uppercase; }
 
-        pre.raw-json {
-            background: #0f172a;
-            color: #38bdf8;
-            padding: 10px;
-            border-radius: 8px;
-            font-size: 11px;
-            overflow-x: auto;
-            max-height: 150px;
-        }
-
         .insight-card {
             display: none;
             background: #f8fafc;
             border: 2px solid #818cf8;
             border-radius: 12px;
-            padding: 15px;
-            margin-top: 10px;
+            padding: 12px;
+            margin-top: 8px;
             text-align: left;
             font-size: 13px;
         }
-        .insight-card h4 { margin: 0 0 8px 0; color: #4f46e5; font-size: 15px; text-align: center; }
+        .insight-card h4 { margin: 0 0 6px 0; color: #4f46e5; font-size: 14px; text-align: center; }
 
-        .error { color: #ef4444; font-weight: bold; margin-top: 8px; min-height: 20px; }
-        .message { color: #4f46e5; font-weight: bold; font-size: 17px; margin-top: 10px; }
+        .error { color: #ef4444; font-weight: bold; }
+        .message { color: #4f46e5; font-weight: bold; font-size: 16px; }
         
         .table-container {
             width: 100%;
             overflow-x: auto;
-            margin-top: 12px;
+            margin-top: 6px;
         }
         table { 
             width: 100%; 
@@ -445,7 +415,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         }
         th, td { 
             border: 1px solid #e2e8f0; 
-            padding: 6px 8px; 
+            padding: 5px 8px; 
             text-align: center; 
         }
         th { 
@@ -453,11 +423,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             color: white; 
             font-size: 13px;
         }
-        #gameArea { display: none; margin-top: 10px; }
+        #gameArea { display: none; margin-top: 5px; }
     </style>
 </head>
 <body>
-   <!-- Analytics Modal Window -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-T00BDGJLS7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-T00BDGJLS7');
+    </script>
+
+    <!-- Analytics Modal Window -->
     <div id="analyticsModal" class="modal-overlay" onclick="closeAnalyticsModal(event)" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content" onclick="event.stopPropagation()">
             <div class="modal-header">
@@ -484,6 +463,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </div>
+
     <main class="card" id="mainCard">
         <h1>🐮 Cow & Bull 🐂</h1>
         <h2 class="subtitle" style="font-size: 1rem;">Word Power Game - Srinivas Varanasi</h2>
@@ -494,7 +474,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="stat-item">🏆 Best: <span id="bestStreak">0</span></div>
             <div class="stat-item">🎮 Total Games: <span id="totalGames">0</span></div>
             <button class="btn-analytics" onclick="openAnalyticsModal()">📊 View Analytics</button>
-            <button class="btn-analytics" onclick="openAnalyticsModal()">📊 View Google Analytics</button>
         </div>
 
         <div class="layout-container">
@@ -503,10 +482,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <h3>📖 How to Play</h3>
                     <ul>
                         <li>Choose your word length and click <b>Start Game</b>.</li>
-                        <li>Guess the hidden English word within <b>10 attempts</b>.</li>
+                        <li>Guess the hidden English word within <b>10 attempts</b>, or click <b>Give Up</b> if you get stuck.</li>
                         <li><b>Rules:</b> No duplicate letters allowed in guesses, no restricted words, and simple plurals (ending in 'S') are excluded.</li>
                         <li><b>Bull (🐂):</b> A correct letter in the <i>exact right spot</i>.</li>
                         <li><b>Cow (🐮):</b> A correct letter, but in the <i>wrong spot</i>.</li>
+                        <li>💡 <i>Note:</i> If a guess results in <b>0 Cows and 0 Bulls</b>, its letters are automatically striked through on the scratchpad!</li>
                     </ul>
                     <div class="example">
                         💡 <b>Example:</b> If hidden word is <b>KING</b> and you guess <b>MIND</b>:
@@ -527,7 +507,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <div id="insightCard" class="insight-card">
                     <h4>📊 Round Insights</h4>
                     <div id="insightDetails"></div>
-                    <button class="btn-start" style="margin-top: 10px; width: 100%;" onclick="startGame()">⚡ Try Again (Same Length)</button>
+                    <button class="btn-start" style="margin-top: 8px; width: 100%;" onclick="startGame()">⚡ Try Again (Same Length)</button>
                 </div>
             </div>
 
@@ -546,7 +526,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
                 <!-- Timer Ticker -->
                 <div class="timer-ticker" aria-live="off">
-                    ⏱️ Time Elapsed: <span id="timerDisplay">00:00</span>
+                    ⏱️ Time: <span id="timerDisplay">00:00</span>
                 </div>
 
                 <p id="error" class="error" aria-live="polite"></p>
@@ -569,9 +549,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         <label for="guessInput" class="sr-only" style="position:absolute; width:1px; height:1px; overflow:hidden;">Enter Guess Word</label>
                         <input type="text" id="guessInput" maxlength="4" placeholder="WORD" oninput="clearError()" onkeyup="if(event.key === 'Enter') submitGuess()">
                         <button onclick="submitGuess()">Guess</button>
+                        <button class="btn-giveup" onclick="giveUpGame()">Give Up</button>
                     </div>
 
-                    <h3 style="margin-top: 15px; margin-bottom: 5px;">Guess History</h3>
+                    <h3 style="margin-top: 10px; margin-bottom: 4px; font-size: 15px;">Guess History</h3>
                     <div class="table-container">
                         <table>
                             <thead>
@@ -604,10 +585,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         let gameActive = false;
         let historyData = [];
 
-        // Restricted Words List (Profanity & inappropriate terms filter)
+        // Restricted Words List
         const RESTRICTED_WORDS = new Set([
             "SLUT", "FUCK", "SHIT", "CUNT", "DAMN", "HELL", "PISS", "DICKS", "COCK", "BITCH"
-            // You can append additional words here as needed
         ]);
 
         // Timer Variables
@@ -737,27 +717,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             document.getElementById("error").innerText = "";
         }
 
-        function handleInput(input) {
+        function clearError() {
             document.getElementById("error").innerText = "";
-            let rawValue = input.value.toUpperCase().replace(/[^A-Z]/g, '');
-            let seen = new Set();
-            let filteredValue = "";
-            let duplicateFound = false;
-
-            for (let char of rawValue) {
-                if (seen.has(char)) {
-                    duplicateFound = true;
-                } else {
-                    seen.add(char);
-                    filteredValue += char;
-                }
-            }
-
-            input.value = filteredValue;
-
-            if (duplicateFound) {
-                document.getElementById("error").innerText = "Repeated letters are not allowed within the guess!";
-            }
         }
 
         function updateAttemptsDots() {
@@ -779,6 +740,79 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             document.getElementById("meterBarInner").style.width = `${percentage}%`;
         }
 
+        // Auto Strikethrough letters on Whiteboard if 0 Cows and 0 Bulls
+        function autoStrikeLetters(guess) {
+            for (let i = 0; i < guess.length; i++) {
+                const letter = guess[i];
+                const btn = document.getElementById(`alpha-${letter}`);
+                if (btn && btn.dataset.state === "0") {
+                    btn.dataset.state = "1";
+                    btn.classList.add("state-strike");
+                }
+            }
+        }
+
+        // Marks all Bulls in Green and Cows in Yellow on Game Over or Give Up
+        function revealAnswersOnGameOver() {
+            ALPHABET.forEach(letter => {
+                const btn = document.getElementById(`alpha-${letter}`);
+                if (!btn) return;
+
+                if (secretWord.includes(letter)) {
+                    let isBull = historyData.some(item => {
+                        for (let i = 0; i < item.guess.length; i++) {
+                            if (item.guess[i] === letter && secretWord[i] === letter) return true;
+                        }
+                        return false;
+                    });
+
+                    if (isBull || secretWord.length === 0) {
+                        btn.dataset.state = "2";
+                        btn.className = "alpha-btn state-green";
+                    } else {
+                        btn.dataset.state = "3";
+                        btn.className = "alpha-btn state-orange";
+                    }
+                }
+            });
+
+            const rows = document.querySelectorAll("#historyTable tr");
+            rows.forEach(row => {
+                const guessCell = row.cells[1];
+                if (!guessCell) return;
+                
+                const guessWord = guessCell.innerText.trim();
+                let formattedHTML = "";
+
+                for (let i = 0; i < guessWord.length; i++) {
+                    let letter = guessWord[i];
+                    if (letter === secretWord[i]) {
+                        formattedHTML += `<span style="background-color: #10b981; color: white; padding: 2px 6px; border-radius: 4px; margin: 0 1px; font-weight: bold;">${letter}</span>`;
+                    } else if (secretWord.includes(letter)) {
+                        formattedHTML += `<span style="background-color: #eab308; color: white; padding: 2px 6px; border-radius: 4px; margin: 0 1px; font-weight: bold;">${letter}</span>`;
+                    } else {
+                        formattedHTML += `<span style="padding: 2px 4px; margin: 0 1px;">${letter}</span>`;
+                    }
+                }
+                guessCell.innerHTML = formattedHTML;
+            });
+        }
+
+        function giveUpGame() {
+            if (!gameActive) return;
+            gameActive = false;
+            stopTimer();
+            revealAnswersOnGameOver();
+            
+            streak = 0;
+            totalGames++;
+            updateStatsDisplay();
+
+            document.getElementById("gameMessage").innerText = `🏳️ You gave up! The secret word was "${secretWord}".`;
+            document.getElementById("insightCard").style.display = "block";
+            document.getElementById("insightDetails").innerHTML = `<b>Secret Word:</b> ${secretWord}<br><b>Status:</b> Surrendered`;
+        }
+
         function submitGuess() {
             if (!gameActive) return;
 
@@ -791,13 +825,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 return;
             }
 
-            // Check if restricted word
             if (RESTRICTED_WORDS.has(guess)) {
                 errorElement.innerText = "That word is restricted and cannot be used!";
                 return;
             }
 
-            // Check if already guessed
             if (guessedWords.has(guess)) {
                 errorElement.innerText = "You already guessed this word! Try a different one.";
                 return;
@@ -830,6 +862,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 }
             }
 
+            // Check if 0 cows and 0 bulls -> strikethrough letters on whiteboard
+            if (cows === 0 && bulls === 0) {
+                autoStrikeLetters(guess);
+            }
+
             attemptsLeft--;
             updateAttemptsDots();
             updateMeter(cows, bulls);
@@ -853,13 +890,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (bulls === currentWordLength) {
                 gameActive = false;
                 stopTimer();
+                revealAnswersOnGameOver();
                 streak++;
                 totalGames++;
                 if (streak > bestStreak) bestStreak = streak;
                 updateStatsDisplay();
 
                 document.getElementById("gameMessage").innerText = `🎉 Amazing! You guessed the word "${secretWord}" in ${attemptNum} attempts!`;
-                document.getElementById("gameArea").style.display = "none";
                 document.getElementById("insightCard").style.display = "block";
                 document.getElementById("insightDetails").innerHTML = `<b>Time taken:</b> ${secondsElapsed}s<br><b>Attempts used:</b> ${attemptNum}/10`;
                 return;
@@ -868,12 +905,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (attemptsLeft === 0) {
                 gameActive = false;
                 stopTimer();
+                revealAnswersOnGameOver();
                 streak = 0;
                 totalGames++;
                 updateStatsDisplay();
 
                 document.getElementById("gameMessage").innerText = `❌ Game Over! The secret word was "${secretWord}".`;
-                document.getElementById("gameArea").style.display = "none";
                 document.getElementById("insightCard").style.display = "block";
                 document.getElementById("insightDetails").innerHTML = `<b>Secret Word:</b> ${secretWord}<br><b>Attempts Exhausted</b>`;
                 return;
@@ -888,17 +925,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         async function openAnalyticsModal() {
             document.getElementById("analyticsModal").style.display = "flex";
-            const fallbackData = {
-                total_games: totalGames,
-                current_streak: streak,
-                best_streak: bestStreak,
-                last_game_time_seconds: secondsElapsed
-            };
             document.getElementById("kpiTotal").innerText = totalGames;
             document.getElementById("kpiWinRate").innerText = totalGames > 0 ? `${Math.round((streak/totalGames)*100)}%` : "0%";
             document.getElementById("kpiAvgTime").innerText = `${secondsElapsed}s`;
             document.getElementById("kpiAvgAttempts").innerText = 10 - attemptsLeft;
-            document.getElementById("analyticsJson").innerText = JSON.stringify(fallbackData, null, 2);
         }
 
         function closeAnalyticsModal(event) {
