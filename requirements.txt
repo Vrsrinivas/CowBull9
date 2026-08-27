@@ -2,3 +2,4 @@ Flask==3.0.3
 gunicorn==22.0.0
 nltk==3.8.1
 better-profanity==0.7.0
+python-ulid==3.0.0
