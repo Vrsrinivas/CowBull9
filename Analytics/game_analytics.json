@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": "2026-08-19T02:25:08.797820Z",
+    "client_ip": "127.0.0.1",
+    "word_length": 4,
+    "secret_word": "JUMP",
+    "attempts_used": 10,
+    "time_taken_seconds": 160.4,
+    "result": "loss"
+  },
+  {
+    "timestamp": "2026-08-19T02:30:55.625451Z",
+    "client_ip": "127.0.0.1",
+    "word_length": 4,
+    "secret_word": "BULL",
+    "attempts_used": 10,
+    "time_taken_seconds": 122.1,
+    "result": "loss"
+  },
+  {
+    "timestamp": "2026-08-19T02:39:00.405850Z",
+    "client_ip": "127.0.0.1",
+    "word_length": 4,
+    "secret_word": "CODE",
+    "attempts_used": 8,
+    "time_taken_seconds": 152.3,
+    "result": "win"
+  },
+  {
+    "timestamp": "2026-08-19T02:43:42.246922Z",
+    "client_ip": "127.0.0.1",
+    "word_length": 4,
+    "secret_word": "CODE",
+    "attempts_used": 10,
+    "time_taken_seconds": 84.5,
+    "result": "loss"
+  },
+  {
+    "timestamp": "2026-08-19T02:48:07.812552Z",
+    "client_ip": "127.0.0.1",
+    "word_length": 4,
+    "secret_word": "GLIA",
+    "attempts_used": 10,
+    "time_taken_seconds": 50.7,
+    "result": "loss"
+  }
+]
